@@ -1,59 +1,160 @@
-# SpikerzDashboard
+Spikerz Dashboard UI
+Project Overview
+The Spikerz Dashboard is a modern, responsive web application built with Angular, designed to provide a comprehensive overview of asset flow, contextual risks, and remediation techniques. It aims to deliver a visually appealing and highly functional user interface that adapts seamlessly across various devices, from desktop to mobile.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+This project implements the UI specifications provided by Spikerz, adhering to strict code quality, design, responsiveness, and accessibility guidelines.
 
-## Development server
+Features
+The dashboard is structured into three main zones, offering a rich user experience:
 
-To start a local development server, run:
+Left Sidebar Navigation:
 
-```bash
-ng serve
-```
+Vertical menu with intuitive icons and labels.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Highlights the currently active navigation item.
 
-## Code scaffolding
+Includes user profile and logout options at the bottom.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Responsive collapse behavior, transforming into a hamburger menu on mobile.
 
-```bash
-ng generate component component-name
-```
+Main Content Area:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Central Information Panel:
 
-```bash
-ng generate --help
-```
+Description Section: Provides context for assets/systems.
 
-## Building
+Extra/Metadata Section: Displays key-value data (Date, Status, Owner) in a responsive vertical table format.
 
-To build the project run:
+Right Panel – Asset Flow & Contextual Risk:
 
-```bash
-ng build
-```
+Asset Flow Diagram: Visualizes infrastructure flow with horizontally arranged server icons, showing branching logic, asset names, IP addresses, and optional risk badges.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Contextual Risk Table: Lists assets with color-coded risk labels and includes pagination.
 
-## Running unit tests
+Risk Summary (Donut Chart): Offers a visual summary of risk distribution (Critical, High, Medium, Low) with a centered total count.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Remediation Techniques View:
 
-```bash
-ng test
-```
+Displays remediation techniques across three distinct vertical columns.
 
-## Running end-to-end tests
+Each column features repeating asset cards with titles, icons, and descriptions, visually grouped with dashed or colored borders.
 
-For end-to-end (e2e) testing, run:
+Floating Drawers / Detail Cards (Vulnerabilities Drawer):
 
-```bash
-ng e2e
-```
+A right-hand side drawer that appears for selected assets.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Shows vulnerabilities as pills or tags.
 
-## Additional Resources
+Includes affected asset details, context, signature lists, and preview cards with contextual log snippets.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Responsive Design Highlights (Mobile View Bonus)
+Collapsed sidebar into a hamburger menu.
+
+Vertical sections stack top-down for improved readability.
+
+Asset flow diagram becomes horizontally scrollable.
+
+Risk table and vulnerability drawers appear full-width or as modals.
+
+Cards compress into a single-column layout.
+
+Ensured proper padding and touch target sizes for mobile usability.
+
+Technologies Used
+Framework: Angular (v20.1.0)
+
+Styling: SCSS (Sass)
+
+UI Components/Icons: Angular Material
+
+Charting: ng2-charts (powered by Chart.js)
+
+Language: TypeScript
+
+Package Manager: npm
+
+Setup and Installation
+Follow these steps to get the Spikerz Dashboard UI running on your local machine.
+
+Prerequisites
+Node.js (LTS version recommended)
+
+npm (comes with Node.js)
+
+Angular CLI (install globally if you haven't already):
+
+npm install -g @angular/cli
+
+Installation Steps
+Clone the repository (if applicable, otherwise, use the project files):
+
+git clone <repository-url>
+cd spikerz-dashboard
+
+Install project dependencies:
+Navigate to the project directory and install all required Node.js packages:
+
+npm install
+
+This command will install Angular Material, ng2-charts, and other dependencies defined in package.json.
+
+Running the Application
+Once the dependencies are installed, you can start the development server:
+
+ng serve --open
+
+This command will:
+
+Compile the Angular application.
+
+Launch a development server (typically at <http://localhost:4200/>).
+
+Open the application in your default web browser.
+
+The application will automatically reload if you change any of the source files.
+
+Project Structure (High-Level)
+spikerz-dashboard/
+├── src/
+│   ├── app/
+│   │   ├── components/       # Reusable UI components (sidebar, drawers, etc.)
+│   │   │   ├── sidebar-navigation/
+│   │   │   ├── main-content-area/
+│   │   │   └── vulnerabilities-drawer/
+│   │   ├── services/         # Shared services for communication (e.g., DrawerService)
+│   │   │   └── drawer.service.ts
+│   │   ├── app.component.ts  # Root component defining the main layout
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.config.ts     # Angular 20+ application configuration
+│   │   └── app.routes.ts     # Application routing definitions
+│   ├── assets/               # Static assets (images, icons, fonts)
+│   │   ├── spikerz-logo.svg
+│   │   ├── spikerz-icon.svg
+│   │   └── user-avatar.png
+│   └── styles/               # Global SCSS styles
+│       ├── _variables.scss   # Design tokens (colors, spacing, fonts, breakpoints)
+│       ├──_mixins.scss      # Reusable SCSS mixins
+│       ├── _base.scss        # Global resets, typography, utility classes
+│       └── styles.scss       # Main entry point for global SCSS imports
+├── angular.json              # Angular CLI configuration
+├── package.json              # Project dependencies and scripts
+└── README.md                 # This file
+
+Contributing
+Contributions are welcome! Please follow the Spikerz UI Code Review Checklist and general guidelines for any submissions.
+
+Fork the repository.
+
+Create a new branch (git checkout -b feature/your-feature-name).
+
+Make your changes.
+
+Commit your changes (git commit -m 'feat: Add new feature').
+
+Push to the branch (git push origin feature/your-feature-name).
+
+Open a Pull Request.
+
+License
+This project is licensed under the MIT License.
