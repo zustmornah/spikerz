@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title font-headline">Contextual Risk</h2>
+  </div>
+  <div class="card-content">
+    <div class="overflow-auto">
+      <table class="table">
+        <thead>
+          <tr class="table-row-head">
+            <th class="table-head">Asset</th>
+            <th class="table-head">Risk</th>
+            <th class="table-head text-right">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of risks" class="table-row">
+            <td class="table-cell">
+              <div class="font-medium">{{ item.asset }}</div>
+              <div class="text-sm text-muted-foreground">{{ item.ip }}</div>
+            </td>
+            <td class="table-cell">
+              <div class="badge" [ngClass]="riskColorMap[item.risk]">
+                {{ item.risk }}
+              </div>
+            </td>
+            <td class="table-cell text-right">
+              <button (click)="openDrawer()" class="open-drawer-button">Open Vulnerabilities Drawer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination mt-4">
+      <div class="pagination-content">
+        <div class="pagination-item">
+          <a href="#" class="pagination-link pagination-previous">Previous</a>
+        </div>
+        <div class="pagination-item">
+          <a href="#" class="pagination-link">1</a>
+        </div>
+        <div class="pagination-item">
+          <a href="#" class="pagination-link is-active">2</a>
+        </div>
+        <div class="pagination-item">
+          <a href="#" class="pagination-link">3</a>
+        </div>
+        <div class="pagination-item">
+          <span class="pagination-ellipsis">...</span>
+        </div>
+        <div class="pagination-item">
+          <a href="#" class="pagination-link pagination-next">Next</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <app-risk-summary></app-risk-summary>
+</div>

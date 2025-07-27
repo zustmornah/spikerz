@@ -1,0 +1,17 @@
+/* connector.component.scss */
+.connector-container {
+  height: 100%;
+  width: 3rem;
+  /* w-12 */
+  flex-shrink: 0;
+}
+
+svg {
+  height: 5rem;
+  /* h-20 */
+}
+
+/* Define a CSS variable for the border color, assuming it's part of your theme */
+:host {
+  --border-color: #e5e7eb; // Example border color for --border
+}

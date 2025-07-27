@@ -1,0 +1,133 @@
+// src/styles/_base.scss
+
+// Basic CSS Reset (simplified)
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: $font-family-primary;
+  color: $color-text-primary;
+  background-color: $color-background-light;
+  line-height: 1.6;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: $spacing-md;
+  margin-bottom: $spacing-sm;
+  font-family: $font-family-primary;
+  color: $color-text-primary;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+// Paragraphs
+p {
+  margin-top: 0;
+  margin-bottom: $spacing-sm;
+}
+
+// Links
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Utility classes (can be expanded)
+.text-center {
+  text-align: center;
+}
+
+.mt-sm {
+  margin-top: $spacing-sm;
+}
+
+.mb-sm {
+  margin-bottom: $spacing-sm;
+}
+
+.p-md {
+  padding: $spacing-md;
+}
+
+// Accessibility utility for visually hidden elements but still readable by screen readers
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Risk badge styling
+.risk-badge {
+  display: inline-block;
+  padding: $spacing-xxs $spacing-xs;
+  border-radius: $border-radius-sm;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $color-text-light;
+
+  &.critical {
+    background-color: $risk-critical;
+  }
+
+  &.high {
+    background-color: $risk-high;
+  }
+
+  &.medium {
+    background-color: $risk-medium;
+    color: $color-text-primary;
+  }
+
+  // Medium might need dark text
+  &.low {
+    background-color: $risk-low;
+  }
+
+  &.info {
+    background-color: $risk-info;
+  }
+}

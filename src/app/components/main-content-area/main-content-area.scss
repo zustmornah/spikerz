@@ -1,0 +1,26 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.main-content-placeholder {
+  @include card-base;
+  padding: $spacing-lg;
+  text-align: center;
+  margin: $spacing-xxs;
+  flex-grow: 1;
+  h1 {
+    color: $color-primary;
+  }
+
+  .open-drawer-button {
+    @include button-base;
+    @include button-variant($color-primary, white);
+    margin-top: $spacing-md;
+  }
+}
+
+@include respond-to('mobile-only') {
+  .main-content-placeholder {
+    margin: $spacing-md;
+    padding: $spacing-md;
+  }
+}

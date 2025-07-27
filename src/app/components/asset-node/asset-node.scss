@@ -1,0 +1,138 @@
+/* asset-node.component.scss */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-2>*:not(:last-child) {
+  margin-bottom: 0.5rem;
+  /* Equivalent to gap-2 */
+}
+
+.asset-node-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  /* h-20 */
+  width: 8rem;
+  /* w-32 */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  border: 1px solid #e5e7eb;
+  /* border, assuming --border is a light grey */
+  background-color: #ffffff;
+  /* bg-card, assuming white */
+  padding: 0.5rem;
+  /* p-2 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* shadow-sm */
+}
+
+.server-icon {
+  // Placeholder for the Server icon.
+  // You might want to use an actual SVG or a dedicated Angular icon library.
+  width: 1.5rem; // h-6
+  height: 1.5rem; // w-6
+  background-color: #6b7280; // Example color
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg>');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-muted-foreground {
+  color: #6b7280; // Example muted text color
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: 1.25rem; // h-5
+  border-radius: 9999px; // rounded-full
+  font-size: 0.75rem; // text-xs
+  font-weight: 600; // font-semibold
+  text-transform: uppercase;
+  width: -moz-fit-content; // w-fit
+  width: fit-content;
+  border: 1px solid transparent; // Default border
+}
+
+/* Risk specific colors - these are examples, match your design system */
+.bg-red-500-20 {
+  background-color: rgba(239, 68, 68, 0.2); // red-500 with 20% opacity
+}
+
+.text-red-700 {
+  color: #b91c1c; // red-700
+}
+
+.border-red-500-30 {
+  border-color: rgba(239, 68, 68, 0.3); // red-500 with 30% opacity
+}
+
+.bg-orange-500-20 {
+  background-color: rgba(249, 115, 22, 0.2); // orange-500 with 20% opacity
+}
+
+.text-orange-700 {
+  color: #c2410c; // orange-700
+}
+
+.border-orange-500-30 {
+  border-color: rgba(249, 115, 22, 0.3); // orange-500 with 30% opacity
+}
+
+// Add more for Medium/Low if you plan to use them
+.bg-yellow-500-20 {
+  background-color: rgba(234, 179, 8, 0.2);
+}
+
+.text-yellow-700 {
+  color: #a16207;
+}
+
+.border-yellow-500-30 {
+  border-color: rgba(234, 179, 8, 0.3);
+}
+
+.bg-green-500-20 {
+  background-color: rgba(34, 197, 94, 0.2);
+}
+
+.text-green-700 {
+  color: #16a34a;
+}
+
+.border-green-500-30 {
+  border-color: rgba(34, 197, 94, 0.3);
+}

@@ -1,0 +1,157 @@
+/* risk-summary.component.scss */
+
+/* Define CSS variables for chart colors, matching the 'fill' in original data */
+:host {
+  // These can be global if you have a theme, or local to this component.
+  // Using hsl values as in the original `chartConfig` but simplified for direct use.
+  --color-critical: hsl(0, 72%, 51%); // Example red
+  --color-high: hsl(30, 80%, 50%); // Example orange
+  --color-medium: hsl(48, 96%, 40%); // Example yellow
+  --color-low: hsl(120, 72%, 40%); // Example green
+  --muted-foreground: #6b7280; // text-muted-foreground
+}
+
+
+/* Card Styles */
+.card {
+  background-color: #ffffff;
+  /* Assuming a white card background */
+  border-radius: 0.5rem;
+  /* Example border-radius */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  /* Example shadow */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  padding: 1.5rem;
+  /* Example padding */
+  border-bottom: 1px solid #f0f0f0;
+  /* Example separator */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  /* Example font size for title */
+  font-weight: 600;
+
+  /* Example font weight */
+  &.font-headline {
+    /* Add any specific headline font styles here if needed */
+  }
+}
+
+.card-description {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  /* text-sm */
+}
+
+.card-content {
+  padding: 1.5rem;
+  /* Example padding */
+  flex: 1;
+  /* flex-1 */
+  padding-bottom: 0;
+  /* pb-0 */
+  display: flex;
+  /* To center the chart content if needed */
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container {
+  margin-left: auto;
+  /* mx-auto */
+  margin-right: auto;
+  /* mx-auto */
+  aspect-ratio: 1 / 1;
+  /* aspect-square */
+  max-height: 250px;
+  /* max-h-[250px] */
+  width: 100%; // Ensure it takes available width
+  // ngx-charts will manage the actual SVG sizing within this container
+}
+
+// Styling for the ngx-charts tooltip (mimicking ChartTooltipContent)
+.chart-tooltip-content {
+  background-color: rgba(0, 0, 0, 0.8); // Dark background
+  color: #fff; // White text
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+.card-footer {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* gap-2 */
+  font-size: 0.875rem;
+  /* text-sm */
+  border-top: 1px solid #f0f0f0; // Optional top border for footer
+}
+
+.card-footer>.flex {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* gap-2 */
+  font-weight: 500;
+  /* font-medium */
+  line-height: 1;
+  /* leading-none */
+}
+
+.critical-text {
+  font-size: 1.875rem;
+  /* text-3xl */
+  font-weight: 700;
+  /* font-bold */
+  color: var(--color-critical);
+  /* text-red-500 */
+}
+
+.critical-icon {
+  color: var(--color-critical);
+  /* text-red-500 */
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}
+
+/* Utility classes */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2>*:not(:last-child) {
+  margin-bottom: 0.5rem; // For flex-col
+  margin-right: 0.5rem; // For flex-row (adjust as needed if flex direction changes)
+}
+
+.w-full {
+  width: 100%;
+}

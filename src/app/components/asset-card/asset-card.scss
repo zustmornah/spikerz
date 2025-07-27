@@ -1,0 +1,51 @@
+/* asset-card.component.scss */
+:host {
+  --primary-color: #007bff; // Example primary color for text-primary
+  --primary-color-10: rgba(0, 123, 255, 0.1); // primary/10
+  --muted-foreground: #6b7280; // text-muted-foreground
+}
+
+.asset-card-container {
+  display: flex;
+  align-items: flex-start;
+  /* items-start */
+  gap: 1rem;
+  /* gap-4 */
+}
+
+.asset-card-icon-wrapper {
+  display: flex;
+  height: 2.5rem;
+  /* h-10 */
+  width: 2.5rem;
+  /* w-10 */
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  background-color: var(--primary-color-10);
+  /* bg-primary/10 */
+  flex-shrink: 0; // Prevent wrapper from shrinking
+}
+
+.asset-card-icon {
+  color: var(--primary-color);
+  /* text-primary */
+  // The SVG components themselves have h-5 w-5 set on their :host,
+  // so no need to set here unless overriding
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  /* text-sm */
+  line-height: 1.25rem;
+  /* leading-5 */
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}

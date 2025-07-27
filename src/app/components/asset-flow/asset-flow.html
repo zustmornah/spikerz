@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title font-headline">Asset Flow Diagram</h2>
+  </div>
+  <div class="card-content overflow-x-auto pb-4">
+    <div class="flex items-center py-4 min-w-max">
+      <app-asset-node name="Load Balancer" ip="10.0.0.1"></app-asset-node>
+      <app-connector></app-connector>
+      <app-asset-node name="Web Server" ip="10.0.1.5"></app-asset-node>
+      <app-connector></app-connector>
+      <div class="flex flex-col justify-around h-48">
+        <svg width="24" height="100%" viewBox="0 0 24 192" preserveAspectRatio="none">
+          <path d="M0 96 L24 96 M12 0 L12 192 M12 48 L24 48 M12 144 L24 144" stroke="var(--border-color)" stroke-width="2" fill="none" stroke-dasharray="4 4" />
+        </svg>
+      </div>
+      <div class="flex flex-col gap-16">
+        <app-asset-node name="Auth Service" ip="10.0.2.10" risk="Critical"></app-asset-node>
+        <app-asset-node name="DB Replica" ip="10.0.3.12"></app-asset-node>
+      </div>
+      <app-connector></app-connector>
+      <app-asset-node name="Database" ip="10.0.3.11" risk="High"></app-asset-node>
+    </div>
+  </div>
+</div>

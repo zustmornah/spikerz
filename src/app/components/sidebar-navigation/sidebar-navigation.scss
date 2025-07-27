@@ -1,0 +1,241 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+:host {
+  display: block; // Ensure the component takes up space for flexbox layout
+}
+
+.sidebar {
+  background-color: $color-background-dark;
+  color: $color-text-light;
+  width: 250px; // Default width
+  min-width: 250px; // Prevent shrinking
+  padding: $spacing-md $spacing-xs;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, min-width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: relative; // For toggle button positioning
+  z-index: $z-index-sidebar; // Ensure it's above other content
+
+  &.collapsed {
+    width: 70px; // Collapsed width
+    min-width: 70px;
+
+    .sidebar-header {
+      justify-content: center;
+
+      .logo {
+        display: none;
+      }
+
+      .logo-text {
+        display: none;
+      }
+
+      .logo-icon {
+        display: block;
+      }
+    }
+
+    .menu-list {
+      .menu-item {
+        justify-content: center;
+
+        .menu-label {
+          display: none;
+        }
+      }
+    }
+
+    .sidebar-footer {
+      .user-profile {
+        display: none;
+      }
+
+      .logout-button {
+        justify-content: center;
+
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .toggle-button {
+      transform: rotate(180deg); // Rotate icon for collapsed state
+
+      & mat-icon {
+        transform: none; // Reset mat-icon's own transform if any
+      }
+    }
+  }
+
+  .sidebar-header {
+    @include flex-row;
+    align-items: center;
+    padding: $spacing-sm $spacing-xs $spacing-lg;
+    gap: $spacing-xs;
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .logo-icon {
+      height: 30px;
+      width: auto;
+      display: none; // Hidden by default, shown when collapsed
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $color-text-light;
+    }
+  }
+
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: $spacing-md 0;
+    flex-grow: 1; // Allows menu to take available space
+
+    .menu-item {
+      @include flex-row;
+      align-items: center;
+      padding: $spacing-xs $spacing-sm;
+      margin-bottom: $spacing-xxs;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      a {
+        @include flex-row;
+        align-items: center;
+        color: $color-text-light;
+        text-decoration: none;
+        width: 100%; // Make anchor fill the list item
+        height: 100%;
+        gap: $spacing-xs;
+      }
+
+      &:hover {
+        background-color: rgba($color-primary, 0.2);
+        color: white;
+      }
+
+      &.active {
+        background-color: $color-primary;
+        color: white;
+        font-weight: bold;
+
+        .menu-icon {
+          color: white; // Ensure icon color is white for active
+        }
+      }
+
+      .menu-icon {
+        color: $color-info; // Default icon color
+        font-size: 24px;
+      }
+
+      .menu-label {
+        font-size: 1rem;
+        white-space: nowrap; // Prevent text wrapping
+      }
+    }
+  }
+
+  .sidebar-footer {
+    padding: $spacing-md $spacing-xs $spacing-sm;
+    border-top: 1px solid rgba($color-text-light, 0.1);
+    margin-top: auto; // Push to the bottom
+
+    .user-profile {
+      @include flex-row;
+      align-items: center;
+      gap: $spacing-xs;
+      margin-bottom: $spacing-sm;
+
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .user-info {
+        @include flex-col;
+
+        .user-name {
+          font-weight: bold;
+        }
+
+        .user-role {
+          font-size: 0.8rem;
+          color: rgba($color-text-light, 0.7);
+        }
+      }
+    }
+
+    .logout-button {
+      @include button-base;
+      @include button-variant($color-danger, white);
+      width: 100%;
+      @include flex-row;
+      align-items: center;
+      gap: $spacing-xs;
+
+      mat-icon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .toggle-button {
+    position: absolute;
+    top: 50%;
+    right: -20px; // Position outside the sidebar
+    transform: translateY(-50%);
+    background-color: $color-primary;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    mat-icon {
+      font-size: 20px;
+      transition: transform 0.3s ease; // For icon rotation
+    }
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+
+    @include respond-to('mobile-only') {
+      display: none; // Hide toggle button on small screens, sidebar behavior is different
+    }
+  }
+
+  // Mobile specific overrides for sidebar
+  @include respond-to('mobile-only') {
+    position: fixed; // Overlay behavior
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80vw; // Take 80% of viewport width
+    transform: translateX(-100%); // Hidden by default
+    transition: transform 0.3s ease-in-out;
+
+    &.open {
+      // Class for open state on mobile
+      transform: translateX(0);
+    }
+  }
+}

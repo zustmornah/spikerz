@@ -1,0 +1,34 @@
+<nav class="sidebar" [class.collapsed]="isCollapsed" role="navigation" aria-label="Main Navigation">
+  <div class="sidebar-header">
+    <img src="assets/spikerz-logo.svg" alt="Spikerz Logo" class="logo" *ngIf="!isCollapsed">
+    <span class="logo-text" *ngIf="!isCollapsed">Spikerz</span>
+    <img src="assets/spikerz-icon.svg" alt="Spikerz Icon" class="logo-icon" *ngIf="isCollapsed">
+  </div>
+
+  <ul class="menu-list" role="menu">
+    <li *ngFor="let item of menuItems" class="menu-item" [class.active]="item.link === activeLink" (click)="setActive(item.link)" role="menuitem" tabindex="0" [attr.aria-current]="item.link === activeLink ? 'page' : null">
+      <a [routerLink]="item.link" routerLinkActive="router-link-active">
+        <mat-icon class="menu-icon" [attr.aria-hidden]="true">{{ item.icon }}</mat-icon>
+        <span class="menu-label" *ngIf="!isCollapsed">{{ item.label }}</span>
+        <span class="visually-hidden">{{ item.label }}</span> </a>
+    </li>
+  </ul>
+
+  <div class="sidebar-footer">
+    <div class="user-profile" *ngIf="!isCollapsed">
+      <img src="assets/user-avatar.png" alt="User Avatar" class="user-avatar">
+      <div class="user-info">
+        <span class="user-name">John Doe</span>
+        <span class="user-role">Admin</span>
+      </div>
+    </div>
+    <button class="logout-button" (click)="onLogout()" aria-label="Logout">
+      <mat-icon>logout</mat-icon>
+      <span *ngIf="!isCollapsed">Logout</span>
+    </button>
+  </div>
+
+  <button class="toggle-button" (click)="toggleCollapse()" aria-label="Toggle Sidebar">
+    <mat-icon>{{ isCollapsed ? 'arrow_forward_ios' : 'arrow_back_ios' }}</mat-icon>
+  </button>
+</nav>

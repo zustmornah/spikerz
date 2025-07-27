@@ -1,0 +1,33 @@
+<aside class="vulnerabilities-drawer" [class.open]="isOpen">
+  <button class="close-button" (click)="closeDrawer()" aria-label="Close Vulnerabilities Drawer">
+    <mat-icon>close</mat-icon>
+  </button>
+  <h2>Vulnerabilities Insights</h2>
+
+  <p>This is a placeholder for the vulnerabilities drawer. It would show details for a selected asset.</p>
+
+  <div class="asset-details">
+    <h3>Affected Asset:</h3>
+    <p><strong>IP:</strong> {{ affectedAssetIp }}</p>
+    <p><strong>Context:</strong> {{ assetContext }}</p>
+  </div>
+
+  <div class="vulnerability-pills">
+    <span *ngFor="let vuln of vulnerabilities" class="vuln-pill" [class]="vuln | lowercase">{{ vuln }}</span>
+  </div>
+
+  <div class="signature-list">
+    <h3>Signature List</h3>
+    <ul>
+      <li *ngFor="let signature of signatures">{{ signature }}</li>
+    </ul>
+  </div>
+
+  <div class="preview-cards">
+    <h3>Preview Cards</h3>
+    <div *ngFor="let preview of previewCards" class="preview-card">
+      <h4>{{ preview.title }}</h4>
+      <p class="snippet"><code>{{ preview.snippet }}</code></p>
+    </div>
+  </div>
+</aside>

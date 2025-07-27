@@ -1,0 +1,75 @@
+/* asset-flow.component.scss */
+.card {
+  background-color: #ffffff;
+  /* Assuming a white card background */
+  border-radius: 0.5rem;
+  /* Example border-radius */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  /* Example shadow */
+}
+
+.card-header {
+  padding: 1.5rem;
+  /* Example padding */
+  border-bottom: 1px solid #f0f0f0;
+  /* Example separator */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  /* Example font size for title */
+  font-weight: 600;
+
+  /* Example font weight */
+  &.font-headline {
+    /* Add any specific headline font styles here if needed */
+  }
+}
+
+.card-content {
+  padding: 1.5rem;
+  /* Example padding */
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  /* pb-4 */
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.min-w-max {
+  min-width: max-content;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.h-48 {
+  height: 12rem;
+  /* 48 * 0.25rem = 12rem */
+}
+
+.gap-16>*:not(:last-child) {
+  margin-bottom: 4rem;
+  /* Equivalent to gap-16 */
+}
+
+/* Define a CSS variable for the border color, assuming it's part of your theme */
+:host {
+  --border-color: #e5e7eb; // Example border color for --border
+}

@@ -1,0 +1,13 @@
+<div class="asset-card-container">
+  <div class="asset-card-icon-wrapper">
+    <ng-container [ngSwitch]="icon">
+      <app-shield-check-icon *ngSwitchCase="'ShieldCheck'" class="asset-card-icon"></app-shield-check-icon>
+      <app-server-icon *ngSwitchCase="'Server'" class="asset-card-icon"></app-server-icon>
+      <app-databaseicon *ngSwitchCase="'Database'" class="asset-card-icon"></app-databaseicon>
+    </ng-container>
+  </div>
+  <div>
+    <p class="font-semibold">{{ title }}</p>
+    <p class="text-sm text-muted-foreground">{{ description }}</p>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title font-headline">Remediation Techniques</h2>
+    <p class="card-description">Recommended actions to mitigate identified risks.</p>
+  </div>
+  <div class="card-content">
+    <div class="grid-layout">
+      <div *ngFor="let technique of techniques" class="technique-card">
+        <div>
+          <h3 class="font-semibold">{{ technique.description }}</h3>
+          <p class="text-sm text-muted-foreground">{{ technique.name }}</p>
+        </div>
+        <div class="space-y-4">
+          <app-asset-card *ngFor="let asset of technique.assets" [icon]="asset.icon" [title]="asset.title" [description]="asset.description">
+          </app-asset-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

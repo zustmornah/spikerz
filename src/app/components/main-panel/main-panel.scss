@@ -1,0 +1,70 @@
+/* main-panel.component.scss */
+.space-y-6>*:not(:last-child) {
+  margin-bottom: 1.5rem;
+  /* Equivalent to space-y-6 */
+}
+
+.card {
+  background-color: #ffffff;
+  /* Assuming a white card background */
+  border-radius: 0.5rem;
+  /* Example border-radius */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  /* Example shadow */
+}
+
+.card-header {
+  padding: 1.5rem;
+  /* Example padding */
+  border-bottom: 1px solid #f0f0f0;
+  /* Example separator */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  /* Example font size for title */
+  font-weight: 600;
+
+  /* Example font weight */
+  &.font-headline {
+    /* Add any specific headline font styles here if needed */
+  }
+}
+
+.card-content {
+  padding: 1.5rem;
+  /* Example padding */
+}
+
+.text-muted-foreground {
+  color: #6b7280;
+  /* Example muted foreground color */
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.space-y-3>*:not(:last-child) {
+  margin-bottom: 0.75rem;
+  /* Equivalent to space-y-3 */
+}
+
+.separator {
+  height: 1px;
+  background-color: #e5e7eb;
+  /* Example separator color */
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+  /* Equivalent to mt-3 */
+}

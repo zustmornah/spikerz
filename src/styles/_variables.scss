@@ -1,0 +1,53 @@
+// src/styles/_variables.scss
+
+// Colors (adjust to match Figma exactly)
+$color-primary: #007bff; // Example Blue
+$color-secondary: #6c757d; // Example Gray
+$color-success: #28a745; // Green
+$color-danger: #dc3545; // Red
+$color-warning: #ffc107; // Yellow
+$color-info: #17a2b8; // Cyan
+
+$color-background-light: #f8f9fa; // Light background
+$color-background-dark: #343a40; // Dark background for contrast (e.g., sidebar)
+$color-text-primary: #212529;
+$color-text-light: #f8f9fa;
+$color-border: #dee2e6;
+
+// Specific Spikerz risk colors (adjust as per Figma)
+$risk-critical: #e03232;
+$risk-high: #f5a623;
+$risk-medium: #f8e71c;
+$risk-low: #7ed321;
+$risk-info: #4a90e2;
+
+// Fonts (update with actual fonts from Figma, e.g., 'Inter', sans-serif)
+$font-family-primary: 'Arial', sans-serif;
+$font-family-secondary: 'Helvetica', sans-serif;
+
+// Spacing (based on a 8px or 4px grid for consistency)
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+$spacing-xxl: 64px;
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Z-index
+$z-index-sidebar: 1000;
+$z-index-drawer: 1010;
+$z-index-modal: 1020;
+
+// Breakpoints for responsiveness (adjust as needed for Figma's responsive behavior)
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;

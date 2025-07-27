@@ -1,0 +1,29 @@
+<div class="space-y-6">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title font-headline">Description</h2>
+    </div>
+    <div class="card-content">
+      <p class="text-muted-foreground">
+        This system is the primary authentication and authorization service for all public-facing applications. It manages user identities, roles, and access tokens. It is a critical component of the infrastructure, and any downtime will have a significant impact on all services.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title font-headline">Extra/Metadata</h2>
+    </div>
+    <div class="card-content">
+      <ul class="space-y-3">
+        <li *ngFor="let item of metadata; let last = last">
+          <div class="flex justify-between">
+            <span class="text-muted-foreground">{{ item.key }}</span>
+            <span class="font-medium">{{ item.value }}</span>
+          </div>
+          <div *ngIf="!last" class="separator mt-3"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

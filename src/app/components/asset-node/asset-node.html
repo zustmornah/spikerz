@@ -1,0 +1,10 @@
+<div class="flex flex-col items-center gap-2">
+  <div class="asset-node-card" [ngClass]="risk ? riskColors[risk] : ''">
+    <div class="server-icon"></div>
+    <p class="mt-1 text-sm font-semibold">{{ name }}</p>
+    <p class="text-xs text-muted-foreground">{{ ip }}</p>
+  </div>
+  <div *ngIf="risk" class="badge" [ngClass]="risk ? riskColors[risk] : ''">
+    {{ risk }}
+  </div>
+</div>
