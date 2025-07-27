@@ -2,7 +2,8 @@
 @import '../../../styles/mixins';
 
 :host {
-  display: block; // Ensure the component takes up space for flexbox layout
+  display: flex;
+  height: 100vh;
 }
 
 .sidebar {
