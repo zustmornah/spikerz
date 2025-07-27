@@ -1,10 +1,12 @@
-Spikerz Dashboard UI
-Project Overview
+# Spikerz Dashboard UI
+
+## Project Overview
+
 The Spikerz Dashboard is a modern, responsive web application built with Angular, designed to provide a comprehensive overview of asset flow, contextual risks, and remediation techniques. It aims to deliver a visually appealing and highly functional user interface that adapts seamlessly across various devices, from desktop to mobile.
 
 This project implements the UI specifications provided by Spikerz, adhering to strict code quality, design, responsiveness, and accessibility guidelines.
 
-Features
+## Features
 The dashboard is structured into three main zones, offering a rich user experience:
 
 Left Sidebar Navigation:
@@ -78,42 +80,46 @@ Follow these steps to get the Spikerz Dashboard UI running on your local machine
 
 Prerequisites
 Node.js (LTS version recommended)
-
 npm (comes with Node.js)
-
 Angular CLI (install globally if you haven't already):
 
+```bash
 npm install -g @angular/cli
+```
 
 Installation Steps
 Clone the repository (if applicable, otherwise, use the project files):
 
+```bash
 git clone <repository-url>
 cd spikerz-dashboard
+```
 
 Install project dependencies:
 Navigate to the project directory and install all required Node.js packages:
-
+```bash
 npm install
+```
 
 This command will install Angular Material, ng2-charts, and other dependencies defined in package.json.
 
 Running the Application
 Once the dependencies are installed, you can start the development server:
 
+```bash
 ng serve --open
+```
 
 This command will:
-
 Compile the Angular application.
-
 Launch a development server (typically at <http://localhost:4200/>).
 
 Open the application in your default web browser.
-
 The application will automatically reload if you change any of the source files.
 
 Project Structure (High-Level)
+
+```plaintext
 spikerz-dashboard/
 ├── src/
 │   ├── app/
@@ -140,21 +146,4 @@ spikerz-dashboard/
 ├── angular.json              # Angular CLI configuration
 ├── package.json              # Project dependencies and scripts
 └── README.md                 # This file
-
-Contributing
-Contributions are welcome! Please follow the Spikerz UI Code Review Checklist and general guidelines for any submissions.
-
-Fork the repository.
-
-Create a new branch (git checkout -b feature/your-feature-name).
-
-Make your changes.
-
-Commit your changes (git commit -m 'feat: Add new feature').
-
-Push to the branch (git push origin feature/your-feature-name).
-
-Open a Pull Request.
-
-License
-This project is licensed under the MIT License.
+```
